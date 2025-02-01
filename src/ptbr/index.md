@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Começar agora
-      link: /ptbr/keepass/introduction
+      link: /ptbr/docs/keepass/introduction
     # - theme: alt
     #   text: API Examples
     #   link: /docs/api-examples

@@ -6,6 +6,7 @@
 
 # Ignorar dependências do Node.js
 node_modules/
+package-lock.json
 
 # Ignorar arquivos de build e distribuição
 dist/
@@ -49,4 +50,3 @@ __pycache__/
 
 # Ignorar arquivos de dependências do Rust (se aplicável)
 /target/
-package-lock.json

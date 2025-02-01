@@ -62,6 +62,63 @@ To translate content to new languages:
 2. Keep keys synchronized between languages to ensure consistency.
 3. Update the `config.ts` file to include the new language if necessary.
 
+### **3. Committing and Sending Changes**
+
+To ensure that all changes are consistent and easy to understand, we are using
+the **Conventional Commits** standard. If you are not familiar with the subject,
+check the
+[official documentation](https://www.conventionalcommits.org/en/v1.0.0/).
+
+#### **Step by Step to Make a Commit**
+
+1. **Update Your Branch**  
+   Make sure your branch is synchronized with `main`. Execute:
+
+   ```bash
+   git pull origin main
+   ```
+
+2. **Add Changes**  
+   Add all modified files to the staging area:
+
+   ```bash
+   git add .
+   ```
+
+3. **Start the Commit**  
+   Run the command below to start the commit assistant:
+
+   ```bash
+   git commit
+   ```
+
+4. **Automatic Analysis with Lint-Staged**
+
+   - **lint-staged** will automatically analyze all modified files.
+   - During this step, it will adjust code formatting and remove metadata from
+     images and other files. ![Lint-Staged](./assets/lint-staged.png)
+
+5. **Create the Commit with Conventional Commits**  
+   After lint-staged analysis, the commit assistant will open. Follow the
+   instructions to create a commit following the **Conventional Commits**
+   standard.  
+   ![Conventional Commits](./assets/conventional-commits.png)
+
+---
+
+### 💡 **Important Tips**
+
+- **Commit Messages**: Use clear, descriptive messages to facilitate
+  understanding of changes and preferably in English.  
+  Example:
+  ```
+  feat: add metadata removal support
+  fix: correct image formatting error
+  docs: update contribution guide
+  ```
+- **Test Locally**: Before sending your changes, run local tests to ensure
+  everything works as expected.
+
 <br>
 
 ## 🛠️ Local Development
@@ -151,12 +208,3 @@ console.log(message);
 
 This project is licensed under the **MIT License**. See the
 [LICENSE](./LICENCE.txt) file for more details.
-
-<br>
-
-## 📞 Contact
-
-If you need help or want to contribute:
-
-- Open an **issue** in the official repository.
-- Contact the team responsible for the project.

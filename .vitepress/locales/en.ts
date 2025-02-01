@@ -1,4 +1,6 @@
-export const en = {
+import { ILocaleConfig } from '../types';
+
+export const en: ILocaleConfig = {
   label: 'English',
   lang: 'en',
   title: 'DNAT',
@@ -32,8 +34,12 @@ export const en = {
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/Do-nada-ao-tudo/KeePass-Doc',
+        link: 'https://github.com/Do-nada-ao-tudo/LibertyChain',
       },
     ],
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2025 DNAT',
+    },
   },
 };

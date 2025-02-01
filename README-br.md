@@ -61,6 +61,67 @@ Para traduzir o conteúdo para novos idiomas:
 2. Mantenha as chaves sincronizadas entre os idiomas para garantir consistência.
 3. Atualize o arquivo `config.ts` para incluir o novo idioma, se necessário.
 
+Aqui está uma versão refatorada e mais "clean" do texto, mantendo a clareza e
+organização enquanto melhora a legibilidade e o fluxo:
+
+### **3. Commitando e Enviando Alterações**
+
+Para garantir que todas as alterações sejam consistentes e fáceis de entender,
+estamos utilizando o padrão **Conventional Commits**. Se você não está
+familiarizado com o assunto, confira a
+[documentação oficial](https://www.conventionalcommits.org/en/v1.0.0/).
+
+#### **Passo a Passo para Realizar o Commit**
+
+1. **Atualize seu Branch**  
+   Certifique-se de que seu branch está sincronizado com o `main`. Execute:
+
+   ```bash
+   git pull origin main
+   ```
+
+2. **Adicione as Alterações**  
+   Adicione todos os arquivos modificados ao staging area:
+
+   ```bash
+   git add .
+   ```
+
+3. **Inicie o Commit**  
+   Execute o comando abaixo para iniciar o assistente de commit:
+
+   ```bash
+   git commit
+   ```
+
+4. **Análise Automática com Lint-Staged**
+
+   - O **lint-staged** irá analisar automaticamente todos os arquivos
+     modificados.
+   - Durante essa etapa, ele ajustará a formatação do código e removerá
+     metadados de imagens e outros arquivos.
+     ![Lint-Staged](./assets/lint-staged.png)
+
+5. **Crie o Commit com Conventional Commits**  
+   Após a análise do lint-staged, o assistente de commit será aberto. Siga as
+   instruções para criar um commit seguindo o padrão **Conventional Commits**.  
+   ![Conventional Commits](./assets/conventional-commits.png)
+
+---
+
+### 💡 **Dicas Importantes**
+
+- **Mensagens de Commit**: Use mensagens claras, descritivas para facilitar a
+  compreensão das alterações e de preferência em inglês.  
+  Exemplo:
+  ```
+  feat: add metadata removal support
+  fix: correct image formatting error
+  docs: update contribution guide
+  ```
+- **Teste Localmente**: Antes de enviar suas alterações, execute testes locais
+  para garantir que tudo funciona conforme o esperado.
+
 <br>
 
 ## 🛠️ Desenvolvimento Local
@@ -150,12 +211,3 @@ console.log(message);
 
 Este projeto está licenciado sob a **MIT License**. Consulte o arquivo
 [LICENSE](./LICENCE.txt) para mais detalhes.
-
-<br>
-
-## 📞 Contato
-
-Se precisar de ajuda ou quiser contribuir:
-
-- Abra uma **issue** no repositório oficial.
-- Entre em contato com a equipe responsável pelo projeto.

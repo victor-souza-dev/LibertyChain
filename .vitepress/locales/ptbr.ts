@@ -1,6 +1,6 @@
-import type { LocaleSpecificConfig } from 'vitepress';
+import { ILocaleConfig } from '../types';
 
-export const ptbr: LocaleSpecificConfig & { label: string; link?: string } = {
+export const ptbr: ILocaleConfig = {
   label: 'Português',
   lang: 'pt-BR',
   title: 'DNAT',
@@ -41,8 +41,12 @@ export const ptbr: LocaleSpecificConfig & { label: string; link?: string } = {
     socialLinks: [
       {
         icon: 'github',
-        link: 'https://github.com/Do-nada-ao-tudo/KeePass-Doc',
+        link: 'https://github.com/Do-nada-ao-tudo/LibertyChain',
       },
     ],
+    footer: {
+      message: 'Lançado sob a Licença MIT.',
+      copyright: 'Direitos Autorais © 2025 DNAT',
+    },
   },
 };

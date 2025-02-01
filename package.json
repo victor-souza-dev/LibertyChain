@@ -12,7 +12,7 @@
     "vitepress": "^1.6.3"
   },
   "scripts": {
-    "prepare": "node ./config/setup.js && husky install",
+    "prepare": "husky install",
     "commit": "cz",
     "dev": "vitepress dev",
     "build": "vitepress build",

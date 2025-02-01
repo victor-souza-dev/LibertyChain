@@ -7,11 +7,16 @@
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
-    "prettier": "^3.4.2"
+    "prettier": "^3.4.2",
+    "vite-plugin-redirect": "^0.2.1",
+    "vitepress": "^1.6.3"
   },
   "scripts": {
     "prepare": "node ./config/setup.js && husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
   },
   "commitlint": {
     "extends": [
@@ -25,7 +30,12 @@
   },
   "lint-staged": {
     "**/*.md": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.ts": [
+      "prettier --write",
+      "git add"
     ],
     "**/*.js": [
       "node ./config/clean.js"
@@ -38,6 +48,7 @@
     "useTabs": false,
     "semi": true,
     "singleQuote": true,
-    "trailingComma": "all"
+    "trailingComma": "all",
+    "endOfLine": "auto"
   }
 }

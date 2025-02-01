@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress';
-import redirect from 'vite-plugin-redirect';
 import { ptbr } from './locales/ptbr';
 import { en } from './locales/en';
 
@@ -13,14 +12,9 @@ export default defineConfig({
         '/assets/': `${process.cwd()}/assets/`,
       },
     },
-    plugins: [
-      redirect({
-        '/': '/ptbr/',
-      }),
-    ],
   },
   locales: {
-    ptbr,
+    root: ptbr,
     en,
   },
 });

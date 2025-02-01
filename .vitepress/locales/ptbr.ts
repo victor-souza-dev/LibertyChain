@@ -7,7 +7,7 @@ export const ptbr: LocaleSpecificConfig & { label: string; link?: string } = {
   description: 'Do Nada ao Tudo',
   themeConfig: {
     nav: [
-      { text: 'Página Inicial', link: '/ptbr/' },
+      { text: 'Página Inicial', link: '/' },
       { text: 'Docs', link: '/ptbr/docs/getting-started' },
     ],
     sidebar: [

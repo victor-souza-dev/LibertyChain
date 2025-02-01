@@ -22,7 +22,7 @@ export const en = {
             items: [
               {
                 text: 'Introduction',
-                link: '/en/docs/keePass/introduction',
+                link: '/en/docs/keepass/introduction',
               },
             ],
           },

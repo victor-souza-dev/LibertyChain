@@ -1,0 +1,43 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.4.2"
+  },
+  "scripts": {
+    "prepare": "node ./config/setup.js && husky install",
+    "commit": "cz"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**/*.md": [
+      "prettier --write"
+    ],
+    "**/*.js": [
+      "node ./config/clean.js"
+    ]
+  },
+  "prettier": {
+    "printWidth": 80,
+    "proseWrap": "always",
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }
+}

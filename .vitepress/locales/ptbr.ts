@@ -23,15 +23,15 @@ export const ptbr: LocaleSpecificConfig & { label: string; link?: string } = {
             items: [
               {
                 text: 'Introdução',
-                link: '/ptbr/docs/keePass/introduction',
+                link: '/ptbr/docs/keepass/introduction',
               },
               {
                 text: 'Instalação (Desktop)',
-                link: '/ptbr/docs/keePass/installation-desktop',
+                link: '/ptbr/docs/keepass/installation-desktop',
               },
               {
                 text: 'Instalação (Mobile)',
-                link: '/ptbr/docs/keePass/installation-mobile',
+                link: '/ptbr/docs/keepass/installation-mobile',
               },
             ],
           },

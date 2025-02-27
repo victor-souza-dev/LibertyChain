@@ -39,7 +39,6 @@
       "git add ."
     ],
     "**/*.js": [
-      "node ./config/clean-metadata.js",
       "git add ."
     ]
   },

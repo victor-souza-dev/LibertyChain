@@ -100,12 +100,12 @@ familiarizado com o assunto, confira a
      modificados.
    - Durante essa etapa, ele ajustará a formatação do código e removerá
      metadados de imagens e outros arquivos.
-     ![Lint-Staged](./assets/lint-staged.png)
+     ![Lint-Staged](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/lint-staged.png)
 
 5. **Crie o Commit com Conventional Commits**  
    Após a análise do lint-staged, o assistente de commit será aberto. Siga as
    instruções para criar um commit seguindo o padrão **Conventional Commits**.  
-   ![Conventional Commits](./assets/conventional-commits.png)
+   ![Conventional Commits](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/conventional-commits.png)
 
 ---
 

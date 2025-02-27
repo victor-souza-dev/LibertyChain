@@ -19,5 +19,5 @@ features:
     details:
       'Aprenda a criar uma carteira digital de forma segura para começar a
       investir em criptomoedas'
-    link: /ptbr/defi-for-beginners/introduction/foundations/getting-started
+    link: /ptbr/defi-for-beginners/foundations/getting-started
 ---

@@ -6,13 +6,6 @@ export default defineConfig({
   srcDir: 'src',
   title: 'DNAT',
   description: 'Do Nada ao Tudo',
-  vite: {
-    resolve: {
-      alias: {
-        '/assets/': `${process.cwd()}/assets/`,
-      },
-    },
-  },
   locales: {
     root: ptbr,
     en,

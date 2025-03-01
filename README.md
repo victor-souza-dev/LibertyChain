@@ -96,13 +96,14 @@ check the
 
    - **lint-staged** will automatically analyze all modified files.
    - During this step, it will adjust code formatting and remove metadata from
-     images and other files. ![Lint-Staged](./assets/lint-staged.png)
+     images and other files.
+     ![Lint-Staged](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/lint-staged.png)
 
 5. **Create the Commit with Conventional Commits**  
    After lint-staged analysis, the commit assistant will open. Follow the
    instructions to create a commit following the **Conventional Commits**
    standard.  
-   ![Conventional Commits](./assets/conventional-commits.png)
+   ![Conventional Commits](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/conventional-commits.png)
 
 ---
 

@@ -4,6 +4,7 @@ import { VitePressSidebarOptions } from 'vitepress-sidebar/types';
 import { INavItem, ISidebar, ISidebarItem } from '../types';
 import { generateSidebar } from 'vitepress-sidebar';
 import { StringUtils } from './stringUtils';
+import { pipe } from './pipe';
 
 type SidebarConfig = VitePressSidebarOptions | VitePressSidebarOptions[];
 
@@ -73,7 +74,7 @@ export class ConfigHelper {
     const items = this.sortByFolderPriority(this.getFolders(locale));
 
     const navbars = items.map((navbar) => ({
-      text: navbar.replace(/(?:^|[\s\W_])\w/g, (match) => match.toUpperCase()),
+      text: pipe(StringUtils.normalizeString)(navbar.replace(/[-_]/g, ' ')),
       link: `/${locale}/${navbar}/`,
     }));
 

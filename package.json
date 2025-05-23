@@ -1,6 +1,7 @@
 {
   "name": "libertychain",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "prepare": "husky install",
     "commit": "cz",
@@ -8,8 +9,14 @@
     "build": "vitepress build",
     "preview": "vitepress preview"
   },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "markdown-it-include": "^2.0.0",
+    "uuid": "^11.1.0",
+    "vitepress-plugin-lightbox": "^1.0.2",
+    "vitepress-sidebar": "^1.31.1"
+  },
   "devDependencies": {
-    "sharp": "^0.33.5",
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "commitizen": "^4.3.1",
@@ -17,6 +24,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
     "prettier": "^3.4.2",
+    "sharp": "^0.33.5",
     "vitepress": "^1.6.3"
   },
   "commitlint": {

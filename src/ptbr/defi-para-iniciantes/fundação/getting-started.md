@@ -1,5 +1,9 @@
 # Começando com segurança
 
+## Glossário
+
+[[toc]]
+
 ## Introdução
 
 No mundo das criptomoedas, segurança não é apenas uma recomendação — é uma

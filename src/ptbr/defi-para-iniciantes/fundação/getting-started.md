@@ -34,11 +34,10 @@ cibernéticos, phishing e erros humanos.
 
 Antes de começar, certifique-se de ter os seguintes requisitos em mãos:
 
-- Um pendrive de 8GB ou mais
 - Um computador sem conexão à internet, isto mesmo que leu, sem conexão à
   internet, remova o cabo de rede ou desconecte o wi-fi para garantir a
   segurança absoluta da sua carteira.
-- Tails instalado em um pendrive
+- Tails instalado em um pendrive com no mínimo 8GB
 
 ## Configurando o Persistent Storage
 

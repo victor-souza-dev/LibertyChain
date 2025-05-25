@@ -21,6 +21,7 @@ interface IThemeConfig {
   outline?: IOutline | false;
   logo?: string;
   siteTitle?: boolean;
+  notFound?: NotFound;
 }
 
 type INavItem = INavItemWithLink | INavItemWithChildren;
@@ -76,4 +77,12 @@ interface ISocialLink {
 interface IOutline {
   level?: number | [number, number] | 'deep';
   label?: string;
+}
+
+interface NotFound {
+  title?: string;
+  quote?: string;
+  code?: string;
+  linkLabel?: string;
+  linkText?: string;
 }

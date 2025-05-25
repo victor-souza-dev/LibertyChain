@@ -16,5 +16,5 @@ features:
     details:
       'Learn how to securely create a digital wallet to start investing in
       cryptocurrencies.'
-    link: /ptbr/de-fi_for_beginners/foundations/getting-started
+    link: /ptbr/de-fi_for_beginners/foundations/getting_started
 ---

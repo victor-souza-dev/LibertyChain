@@ -24,13 +24,11 @@ export default defineConfig({
         ],
       }),
       GitChangelogMarkdownSection({
-        exclude(id, context) {
-          const isExcluded = ['src/ptbr/index.md', 'src/en/index.md'];
+        exclude(id, _) {
+          const isExcluded = ['index.md'];
           const filePath = id.replace(/^.*?(?=src\/)/, '');
 
-          return isExcluded.some((path) =>
-            context.helpers.pathEquals(filePath, path),
-          );
+          return isExcluded.some((path) => filePath.includes(path));
         },
       }),
     ],

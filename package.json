@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "markdown-it-include": "^2.0.0",
+    "nprogress": "^0.2.0",
     "uuid": "^11.1.0",
     "vitepress-plugin-lightbox": "^1.0.2",
     "vitepress-sidebar": "^1.31.1"

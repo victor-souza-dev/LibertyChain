@@ -9,15 +9,15 @@ hero:
   actions:
     - theme: brand
       text: Começar agora
-      link: /ptbr/docs/keepass/introduction
+      link: /ptbr/de-fi_for_beginners/
     # - theme: alt
     #   text: API Examples
     #   link: /docs/api-examples
 
 features:
-  - title: KeePass
+  - title: Criar uma wallet
     details:
-      'KeePass é um gerenciador de senhas que permite armazenar e gerenciar suas
-      senhas de forma segura e fácil.'
-    link: /ptbr/docs/keepass/introduction
+      'Aprenda a criar uma carteira digital de forma segura para começar a
+      investir em criptomoedas'
+    link: /ptbr/de-fi_for_beginners/foundations/getting-started
 ---

@@ -1,36 +1,14 @@
+import { ConfigHelper } from '../helpers/config';
 import { ILocaleConfig } from '../types';
 
 export const en: ILocaleConfig = {
   label: 'English',
-  lang: 'en',
+  lang: 'en-US',
   title: 'DNAT',
   description: 'From Nothing to Everything',
   themeConfig: {
-    nav: [
-      { text: 'Home', link: '/en/' },
-      { text: 'Docs', link: '/en/docs/getting-started' },
-    ],
-    sidebar: [
-      {
-        text: 'Docs',
-        items: [
-          {
-            text: 'Getting Started',
-            link: '/en/docs/getting-started',
-          },
-          {
-            text: 'KeePass',
-            collapsed: true,
-            items: [
-              {
-                text: 'Introduction',
-                link: '/en/docs/keepass/introduction',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    nav: ConfigHelper.getNavbarConfig('en'),
+    sidebar: ConfigHelper.getSidebarConfig('en'),
     socialLinks: [
       {
         icon: 'github',

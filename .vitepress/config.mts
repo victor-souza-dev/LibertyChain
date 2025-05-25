@@ -23,7 +23,16 @@ export default defineConfig({
           },
         ],
       }),
-      GitChangelogMarkdownSection(),
+      GitChangelogMarkdownSection({
+        exclude(id, context) {
+          const isExcluded = ['src/ptbr/index.md', 'src/en/index.md'];
+          const filePath = id.replace(/^.*?(?=src\/)/, '');
+
+          return isExcluded.some((path) =>
+            context.helpers.pathEquals(filePath, path),
+          );
+        },
+      }),
     ],
     resolve: {
       alias: {

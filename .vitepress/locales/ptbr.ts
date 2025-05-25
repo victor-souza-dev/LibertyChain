@@ -19,5 +19,14 @@ export const ptbr: ILocaleConfig = {
       message: 'Lançado sob a Licença MIT.',
       copyright: 'Direitos Autorais © 2025 DNAT',
     },
+    darkModeSwitchLabel: 'Tema',
+    darkModeSwitchTitle: 'Alternar para o tema escuro',
+    lightModeSwitchTitle: 'Alternar para o tema claro',
+    sidebarMenuLabel: 'Menu',
+    returnToTopLabel: 'Retornar ao topo',
+    externalLinkIcon: true,
+    outline: {
+      label: 'Neste Artigo',
+    },
   },
 };

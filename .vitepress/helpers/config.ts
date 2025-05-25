@@ -11,24 +11,23 @@ type SidebarConfig = VitePressSidebarOptions | VitePressSidebarOptions[];
 export class ConfigHelper {
   private static folderPriorityOrder = ['TI'];
   private static ignoredFolders = ['assets'];
+  private static basePath = path.resolve(__dirname, `../../src`);
 
   private static indexConfig: VitePressSidebarOptions = {
-    includeFolderIndexFile: true,
     includeRootIndexFile: true,
-    useFolderLinkFromIndexFile: true,
-    useFolderTitleFromIndexFile: true,
     includeEmptyFolder: true,
+    useFolderTitleFromIndexFile: true,
   };
 
   private static formatterConfig: VitePressSidebarOptions = {
-    hyphenToSpace: true,
+    underscoreToSpace: true,
     useTitleFromFrontmatter: true,
     useTitleFromFileHeading: true,
   };
 
   private static sortConfig: VitePressSidebarOptions = {
     sortFolderTo: 'bottom',
-    sortMenusByFrontmatterOrder: true,
+    sortMenusOrderNumericallyFromTitle: true,
     manualSortFileNameByPriority: ['index.md'],
   };
 
@@ -73,16 +72,41 @@ export class ConfigHelper {
   public static getNavbarConfig(locale: string): INavItem[] {
     const items = this.sortByFolderPriority(this.getFolders(locale));
 
-    const navbars = items.map((navbar) => ({
-      text: pipe(StringUtils.normalizeString)(navbar.replace(/[-_]/g, ' ')),
-      link: `/${locale}/${navbar}/`,
-    }));
+    const navbars = items.map((folder) => {
+      const folderTitle = this.getFolderTitleFromIndexFile(locale, folder);
 
-    return [{ text: 'Página Inicial', link: '/' }, ...navbars];
+      const text = folderTitle
+        ? folderTitle
+        : pipe(StringUtils.normalizeString)(folder.replace(/[_]/g, ' '));
+
+      return {
+        text,
+        link: `/${locale}/${folder}/`,
+      };
+    });
+
+    return [{ text: 'Página Inicial', link: `/${locale}/` }, ...navbars];
+  }
+
+  private static getFolderTitleFromIndexFile(
+    locale: string,
+    folder: string,
+  ): string | undefined {
+    const indexFilePath = path.join(this.basePath, locale, folder, 'index.md');
+
+    if (fs.existsSync(indexFilePath)) {
+      const fileContent = fs.readFileSync(indexFilePath, 'utf-8');
+      const titleMatch = fileContent.match(/^#\s+(.*)$/m);
+      if (titleMatch) {
+        return titleMatch[1].trim();
+      }
+    }
+
+    return undefined;
   }
 
   private static getFolders(locale: string): string[] {
-    const srcPath = path.resolve(__dirname, `../../src/${locale}`);
+    const srcPath = path.join(this.basePath, locale);
 
     return fs
       .readdirSync(srcPath)

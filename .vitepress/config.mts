@@ -10,7 +10,7 @@ import { v4 } from 'uuid';
 
 export default defineConfig({
   vite: {
-    plugins: [titleChangeObserver()],
+    plugins: [],
     resolve: {
       alias: {
         '@helpers': `${process.cwd()}/.vitepress/helpers`,
@@ -45,6 +45,7 @@ export default defineConfig({
       lazyLoading: true,
     },
   },
+  lang: 'pt-BR',
   srcDir: 'src',
   title: '📚 DNAT',
   description: 'Do Nada ao Tudo',
@@ -60,27 +61,37 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
-        miniSearch: {
-          options: {
-            extractField: (doc, field) => {
-              if (field === 'id') {
-                return `${v4()}-${doc.path}`;
-              }
-              return doc[field];
+        locales: {
+          ptbr: {
+            translations: {
+              button: {
+                buttonText: 'Pesquisar',
+                buttonAriaLabel: 'Pesquisar',
+              },
+              modal: {
+                noResultsText: 'Nenhum resultado encontrado',
+                resetButtonTitle: 'Limpar pesquisa',
+                backButtonTitle: 'Voltar',
+                displayDetails: 'Exibir detalhes',
+                footer: {
+                  selectText: 'Selecionar',
+                  selectKeyAriaLabel: 'Selecionar',
+                  navigateText: 'Navegar',
+                  closeText: 'Fechar',
+                  closeKeyAriaLabel: 'Fechar',
+                  navigateUpKeyAriaLabel: 'Navegar para cima',
+                  navigateDownKeyAriaLabel: 'Navegar para baixo',
+                },
+              },
             },
           },
-          searchOptions: {
-            fuzzy: 0.2,
-            prefix: true,
-            boost: { title: 4, text: 2, headers: 1 },
-          },
         },
+        miniSearch: {},
       },
     },
   },
   locales: {
-    root: ptbr,
-    // ptbr,
-    // en,
+    ptbr: ptbr as any,
+    en: en as any,
   },
 });

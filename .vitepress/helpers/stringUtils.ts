@@ -174,10 +174,16 @@ const maskString = (
  */
 function normalizeString(str: string): string {
   return str
+    .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .toLowerCase()
     .split(' ')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) =>
+      word
+        .split('-')
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join('-'),
+    )
     .join(' ');
 }
 // #endregion

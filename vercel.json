@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/ptbr/",
+      "permanent": true
+    }
+  ]
+}

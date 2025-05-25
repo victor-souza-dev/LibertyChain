@@ -8,17 +8,13 @@ hero:
   tagline: Em busca da riqueza
   actions:
     - theme: brand
-      text: Get Started
-      link: /docs/markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /docs/api-examples
+      text: Start Now
+      link: /ptbr/de-fi_for_beginners/
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Create a Wallet
+    details:
+      'Learn how to securely create a digital wallet to start investing in
+      cryptocurrencies.'
+    link: /ptbr/de-fi_for_beginners/foundations/getting-started
 ---

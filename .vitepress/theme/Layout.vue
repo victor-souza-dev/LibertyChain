@@ -61,4 +61,8 @@ router.onAfterRouteChanged = setupMediumZoom;
 .VPSocialLinks.VPNavBarSocialLinks.social-links {
     margin-right: 0;
 }
+
+.vp-nolebase-git-changelog-history {
+  background-color: var(--vp-custom-block-info-bg);
+}
 </style>

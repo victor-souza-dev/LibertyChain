@@ -1,4 +1,4 @@
-# 📚 DNAT Documentation - From Nothing to Everything
+# 📚 DNAT - From Nothing to Everything
 
 [![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md)
 [![br](https://img.shields.io/badge/lang-br-green.svg)](./README-br.md)
@@ -6,175 +6,177 @@
 ## 🌟 Overview
 
 **DNAT (From Nothing to Everything)** is a project with organized and accessible
-documentation, built using [VitePress](https://vitepress.vuejs.org/), a modern
-and efficient static site generator. The main objective of this project is to
-provide a comprehensive and easy-to-use documentation platform, allowing users
-to access detailed information about crypto, blockchain, security, and much
-more.
+documentation, using [VitePress](https://vitepress.vuejs.org/), a modern and
+efficient static site generator.
 
-<br>
+**Goals:**
+
+- Provide a comprehensive and intuitive documentation platform.
+- Facilitate access to content about **crypto**, **blockchain**, **security**
+  and much more.
 
 ## 🏗️ Project Structure
 
-Below is the organized project structure:
-
-```
+```plaintext
 .
 ├── .vitepress/
-│   ├── config.ts          # Main VitePress configuration
-│   └── locales/           # Language-specific configurations
-├── assets/                # Static files (images, icons, etc.)
-├── src/
-│   ├── index.md           # Project homepage (Default PT-BR)
-│   └── locale/            # Folders for each supported language
-│       ├── docs/          # This is where you should add your pages
-│       └── index.md       # Homepage for the language
-└── README.md              # Project general overview
+│   ├── config.ts               # Main VitePress configuration
+│   └── locales/                # Language-specific configurations
+├── src/                        # Root of all pages
+│   ├── index.md                # Project homepage
+│   └── <locale>/               # Folders for each language
+│       ├── index.md            # Language homepage
+│       └── <navbar>/           # Represents a section shown in navbar
+│           ├── index.md        # Section introduction
+│           └── <folder>/       # Submenus shown in sidebar
+└── README.md                   # Project general overview
 ```
 
-> 💡 **Tip:** Use this structure as a reference when adding new pages or
-> modifying the project, always aiming to maintain a consistent pattern.
-
-<br>
+💡 **Tip:** Use this structure as a reference when creating or modifying pages,
+maintaining a consistent pattern.
 
 ## 🤝 How to Contribute
 
-### 1. Adding Pages
+Before anything else, fork the repository and clone it to your machine.
 
-To add new pages to the documentation, follow these steps:
+### 💻 1. Local Development
 
-1. Navigate to the `src/` folder, where there's a folder for each supported
-   language.
-2. Choose the desired language and enter `docs`, which is the folder where
-   content should be added:
-   - Create a new folder with the desired page name.
-   - Or create a `.md` file inside an existing folder, always respecting the
-     folder hierarchy.
-3. Add content in **Markdown** format.
-4. Update the `.vitepress/locales/<locale>.ts` file to include the new page path
-   in the sidebar.
-
-### 2. Translations
-
-To translate content to new languages:
-
-1. Edit files in `.vitepress/locales/`.
-2. Keep keys synchronized between languages to ensure consistency.
-3. Update the `config.ts` file to include the new language if necessary.
-
-### **3. Committing and Sending Changes**
-
-To ensure that all changes are consistent and easy to understand, we are using
-the **Conventional Commits** standard. If you are not familiar with the subject,
-check the
-[official documentation](https://www.conventionalcommits.org/en/v1.0.0/).
-
-#### **Step by Step to Make a Commit**
-
-1. **Update Your Branch**  
-   Make sure your branch is synchronized with `main`. Execute:
-
-   ```bash
-   git pull origin main
-   ```
-
-2. **Add Changes**  
-   Add all modified files to the staging area:
-
-   ```bash
-   git add .
-   ```
-
-3. **Start the Commit**  
-   Run the command below to start the commit assistant:
-
-   ```bash
-   git commit
-   ```
-
-4. **Automatic Analysis with Lint-Staged**
-
-   - **lint-staged** will automatically analyze all modified files.
-   - During this step, it will adjust code formatting and remove metadata from
-     images and other files.
-     ![Lint-Staged](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/lint-staged.png)
-
-5. **Create the Commit with Conventional Commits**  
-   After lint-staged analysis, the commit assistant will open. Follow the
-   instructions to create a commit following the **Conventional Commits**
-   standard.  
-   ![Conventional Commits](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/conventional-commits.png)
-
----
-
-### 💡 **Important Tips**
-
-- **Commit Messages**: Use clear, descriptive messages to facilitate
-  understanding of changes and preferably in English.  
-  Example:
-  ```
-  feat: add metadata removal support
-  fix: correct image formatting error
-  docs: update contribution guide
-  ```
-- **Test Locally**: Before sending your changes, run local tests to ensure
-  everything works as expected.
-
-<br>
-
-## 🛠️ Local Development
-
-### Installation
+#### 📦 Installation
 
 ```bash
 npm install
 ```
 
-### Local Execution
-
-Start the development server:
+#### 🏃‍♂️ Running
 
 ```bash
 npm run dev
 ```
 
-Access the site locally at:  
-[http://localhost:5173](http://localhost:5173)
+Access: [http://localhost:5173](http://localhost:5173)
 
-### Build
-
-To build the project for production:
+#### 🛠️ Build
 
 ```bash
 npm run build
 ```
 
-### Run Project Build
+#### 👀 Build Preview
 
 ```bash
 npm run preview
 ```
 
-<br>
+---
+
+### 📝 2. Adding Pages
+
+1. Navigate to `src/` and choose the language folder.
+2. Choose a section or create a new one:
+   - For new topics, create a folder named with **underscore** `_` between words
+     (they will be converted to spaces).
+   - Alternatively, create a `.md` file inside an existing folder.
+3. Write the content in **Markdown**.
+
+---
+
+### 🌐 3. Translations
+
+1. Create a new file in `.vitepress/locales/` with the language code.
+2. Register the new language in `config.ts`:
+
+```ts
+locales: {
+  ptbr: ptbr as any,
+  en: en as any,
+}
+```
+
+3. Create a corresponding folder in `src/` and copy the existing structure to
+   ensure consistency.
+4. Keep folder and file names **identical** between languages — this enables
+   automatic translation.
+
+---
+
+### 🚀 4. Commit and Submit Changes
+
+**Standard:** We use **Conventional Commits**. Read the
+[official documentation](https://www.conventionalcommits.org/en/v1.0.0/).
+
+#### Steps:
+
+1. **Update your branch:**
+
+```bash
+git pull origin main
+```
+
+2. **Add changes:**
+
+```bash
+git add .
+```
+
+3. **Start commit:**
+
+```bash
+git commit
+```
+
+4. **Automatic analysis:**
+
+- **lint-staged** will:
+
+  - Adjust formatting.
+  - Remove unwanted metadata.
+
+![Lint-Staged](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/lint-staged.png)
+
+5. **Finish commit:**
+
+- The assistant will guide you according to the **Conventional Commits**
+  standard.
+
+![Conventional Commits](https://raw.githubusercontent.com/Do-nada-ao-tudo/RepoStaticFile/refs/heads/main/conventional-commits.png)
+
+6. **Push changes:**
+
+```bash
+git push origin main
+```
+
+7. **Open a Pull Request:**
+
+- Open a Pull Request to the `main` branch.
+
+---
+
+#### 💡 Commit Best Practices
+
+- **Clear and descriptive** messages, preferably in English:
+
+```plaintext
+feat: add metadata removal support
+fix: correct image formatting error
+docs: update contribution guide
+```
+
+- **Test locally** before submitting.
 
 ## 📋 Best Practices
 
-Follow these guidelines to keep documentation organized and consistent:
+- **Context-based organization:** Structure folders according to theme or
+  section.
 
-- **Organization by themes:** Create thematic folders inside `src/locale/docs/`
-  to group related pages.
-- **Updated translations:** Whenever adding or modifying content, ensure all
-  translations are synchronized.
-- **Established standards:** Follow the style and conventions already defined in
-  the project to ensure uniformity.
+- **Synchronized translations:** Update all versions whenever modifying or
+  creating content.
 
-<br>
+- **Consistency:** Follow established style and conventions.
 
-### 🔍 Markdown Usage Example
+## 🔍 Markdown Examples
 
-#### Nested Lists
-
-Use nested lists to organize hierarchical information:
+### 🗂️ Nested Lists
 
 ```markdown
 - Main Category
@@ -184,28 +186,22 @@ Use nested lists to organize hierarchical information:
   - Subcategory 2
 ```
 
-#### Tables
+### 📊 Tables
 
-Tables are useful for organizing tabular information:
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm install`   | Install dependencies     |
+| `npm run dev`   | Start development server |
+| `npm run build` | Build for production     |
 
-| Command         | Description                   |
-| --------------- | ----------------------------- |
-| `npm install`   | Installs dependencies         |
-| `npm run dev`   | Starts development server     |
-| `npm run build` | Builds project for production |
-
-#### Code Blocks
-
-Use code blocks to highlight commands or examples:
+### 💻 Code Blocks
 
 ```javascript
 const message = 'Hello, world!';
 console.log(message);
 ```
 
-<br>
-
 ## 📜 License
 
-This project is licensed under the **MIT License**. See the
-[LICENSE](./LICENCE.txt) file for more details.
+This project is under the **MIT License**. Check the [LICENSE](./LICENCE.txt)
+file for more details.

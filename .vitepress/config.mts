@@ -5,10 +5,33 @@ import lightbox from 'vitepress-plugin-lightbox';
 import { createAlias } from './helpers/createAlias';
 import { en } from './locales/en';
 import { ptbr } from './locales/ptbr';
+import {
+  GitChangelog,
+  GitChangelogMarkdownSection,
+} from '@nolebase/vitepress-plugin-git-changelog/vite';
 
 export default defineConfig({
   vite: {
-    plugins: [],
+    plugins: [
+      GitChangelog({
+        repoURL: () => 'https://github.com/Do-nada-ao-tudo/LibertyChain',
+        mapAuthors: [
+          {
+            name: 'Victor Souza',
+            username: 'victor-souza-dev',
+            mapByEmailAliases: ['victor.souza2210@gmail.com'],
+          },
+        ],
+      }),
+      GitChangelogMarkdownSection({
+        exclude(id, _) {
+          const isExcluded = ['index.md'];
+          const filePath = id.replace(/^.*?(?=src\/)/, '');
+
+          return isExcluded.some((path) => filePath.includes(path));
+        },
+      }),
+    ],
     resolve: {
       alias: {
         '@helpers': `${process.cwd()}/.vitepress/helpers`,

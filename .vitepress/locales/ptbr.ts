@@ -28,5 +28,11 @@ export const ptbr: ILocaleConfig = {
     outline: {
       label: 'Neste Artigo',
     },
+    notFound: {
+      title: 'Não encontrado',
+      quote: 'A página que você está procurando não existe ou foi removida.',
+      linkLabel: 'Voltar para a página inicial',
+      linkText: 'Voltar para o início',
+    },
   },
 };

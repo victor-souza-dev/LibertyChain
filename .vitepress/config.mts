@@ -5,8 +5,6 @@ import lightbox from 'vitepress-plugin-lightbox';
 import { createAlias } from './helpers/createAlias';
 import { en } from './locales/en';
 import { ptbr } from './locales/ptbr';
-import { titleChangeObserver } from './plugins/titleChangeObserver';
-import { v4 } from 'uuid';
 
 export default defineConfig({
   vite: {
@@ -89,6 +87,8 @@ export default defineConfig({
         miniSearch: {},
       },
     },
+    siteTitle: 'DNAT',
+    logo: 'https://avatars.githubusercontent.com/u/191169856?s=48&v=4',
   },
   locales: {
     ptbr: ptbr as any,

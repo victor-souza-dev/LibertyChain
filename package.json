@@ -10,7 +10,6 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "chokidar": "^4.0.3",
     "markdown-it-include": "^2.0.0",
     "uuid": "^11.1.0",
     "vitepress-plugin-lightbox": "^1.0.2",
@@ -19,6 +18,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
+    "@nolebase/vitepress-plugin-enhanced-readabilities": "^2.17.0",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",

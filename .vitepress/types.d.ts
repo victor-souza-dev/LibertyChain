@@ -9,8 +9,8 @@ export interface ILocaleConfig {
 interface IThemeConfig {
   nav: INavItem[];
   sidebar: ISidebar;
-  footer: IFooter;
-  socialLinks: ISocialLink[];
+  footer?: IFooter;
+  socialLinks?: ISocialLink[];
   aside?: boolean;
   darkModeSwitchLabel?: string; // Default: "Appearance"
   lightModeSwitchTitle?: string; // Default: "Switch to light theme"

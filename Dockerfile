@@ -13,6 +13,9 @@ RUN --mount=type=cache,target=/usr/src/app/.npm \
     npm set cache /usr/src/app/.npm && \
     npm install
 
+# Install additional dependencies required for the build process
+RUN apk add --no-cache git
+
 # Copy the entire application source code
 COPY . .
 

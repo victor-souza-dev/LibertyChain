@@ -1,0 +1,8 @@
+node_modules
+.vitepress/dist
+.husky
+vercel.json
+README-br.md
+README.md
+LICENCE.txt
+.gitignore
